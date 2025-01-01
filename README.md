@@ -1,37 +1,12 @@
-# Python Code Optimizer
+# LLM Playground
 
-A simple web interface for optimizing Python code using Large Language Models (LLMs).
+A collection of projects exploring Large Language Models (LLMs) and their applications. This repository serves as a playground for experimenting with different LLM tools, APIs, and use cases.
 
-![UI Screenshot](image_ui.png)
+## Projects
 
-## Features
-- Optimize Python code using GPT-4, GPT-3.5, or Claude
-- Run and compare execution times of original vs. optimized code
-- Local execution in browser
+### 1. PyPolish
+A Python code optimizer using LLMs. Upload your Python code and get optimization suggestions from different models.
 
-## Setup
-1. Clone the repository
-2. Install dependencies:
-```bash
-conda env create -f environment.yml
-conda activate LLMe
-```
+![PyPolish UI](PyPolish/image_ui.png)
 
-3. Set up environment variables:
-```bash
-cp .env.example .env
-```
-Then add your API keys to `.env`
-
-4. Run the application:
-```bash
-python PyPolish/py_polish_app.py
-```
-
-## Usage
-1. Paste your Python code in the left panel
-2. Select an LLM model
-3. Click "Improve Code" to get optimized version
-4. Use "Run Code Locally" buttons to compare execution times
-
-
+[Learn more about PyPolish](PyPolish/README.md)
