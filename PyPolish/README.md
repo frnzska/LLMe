@@ -33,5 +33,3 @@ python PyPolish/py_polish_app.py
 2. Select an LLM model
 3. Click "Improve Code" to get optimized version
 4. Use "Run Code Locally" buttons to compare execution times
-
-
