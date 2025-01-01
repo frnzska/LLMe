@@ -7,6 +7,4 @@ A collection of projects exploring Large Language Models (LLMs) and their applic
 ### 1. PyPolish
 A Python code optimizer using LLMs. Upload your Python code and get optimization suggestions from different models.
 
-![PyPolish UI](PyPolish/image_ui.png)
-
 [Learn more about PyPolish](PyPolish/README.md)
