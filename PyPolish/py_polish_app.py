@@ -70,7 +70,7 @@ def improve_code(code: str, model: str) -> str:
 
 
 def model_mapping(code: str, llm_choice: str) -> str:
-    """Map friendly model names to actual model identifiers and improve code.
+    """Map model names to actual model identifiers.
 
     Args:
         code: The Python code to improve
@@ -103,7 +103,7 @@ def run_code(code: str) -> float:
 
 
 def create_gradio_interface() -> gr.Blocks:
-    """Create the Gradio interface for the code optimizer.
+    """Creates the Gradio interface for the code optimizer.
 
     Returns:
         gr.Blocks: Configured Gradio interface
@@ -162,7 +162,7 @@ def create_gradio_interface() -> gr.Blocks:
 
 
 def main() -> None:
-    """Initialize and run the application."""
+    """Initialize application."""
     try:
         api_keys = load_env()
         if not api_keys['openai_key'] and not api_keys['anthropic_key']:
