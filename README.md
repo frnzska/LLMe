@@ -5,6 +5,11 @@ A collection of projects exploring Large Language Models (LLMs) and their applic
 ## Projects
 
 ### 1. PyPolish
-A Python code optimizer using LLMs. Upload your Python code and get optimization suggestions from different models.
+A Python code optimizer using frontier LLMs. Upload your Python code and get optimization suggestions from different models.
 
-[Learn more about PyPolish](PyPolish/README.md)
+[PyPolish](PyPolish/README.md)
+
+### 2. Job Councelor
+A job counseling assistant using RAG and OpenAI's GPT-4o model.
+
+[Job Councelor](JobCouncelor/README.md)

@@ -11,3 +11,7 @@ dependencies:
     - openai
     - gradio
     - anthropic
+    - faiss-cpu
+    - langchain
+    - langchain-community
+    - langchain-openai
