@@ -1,0 +1,53 @@
+unit_tests:
+  - name: customer_order_summary_no_orders
+    model: customer_order_summary
+    given:
+      - input: source('crm', 'customers')
+        rows:
+          - {customer_id: 1, first_name: "John", last_name: "Doe", email: "john.doe@example.com"}
+      - input: source('sales', 'orders')
+        rows: []
+    expect:
+      rows:
+        - {customer_id: 1, first_name: "John", last_name: "Doe", email: "john.doe@example.com", total_orders: 0, total_spent: null, last_order_date: null}
+
+  - name: customer_order_summary_with_orders
+    model: customer_order_summary
+    given:
+      - input: source('crm', 'customers')
+        rows:
+          - {customer_id: 1, first_name: "John", last_name: "Doe", email: "john.doe@example.com"}
+      - input: source('sales', 'orders')
+        rows:
+          - {order_id: 101, customer_id: 1, order_amount: 100.00, order_date: "2023-01-01"}
+          - {order_id: 102, customer_id: 1, order_amount: 150.00, order_date: "2023-02-01"}
+    expect:
+      rows:
+        - {customer_id: 1, first_name: "John", last_name: "Doe", email: "john.doe@example.com", total_orders: 2, total_spent: 250.00, last_order_date: "2023-02-01"}
+
+  - name: customer_order_summary_multiple_customers
+    model: customer_order_summary
+    given:
+      - input: source('crm', 'customers')
+        rows:
+          - {customer_id: 1, first_name: "John", last_name: "Doe", email: "john.doe@example.com"}
+          - {customer_id: 2, first_name: "Jane", last_name: "Smith", email: "jane.smith@example.com"}
+      - input: source('sales', 'orders')
+        rows:
+          - {order_id: 101, customer_id: 1, order_amount: 100.00, order_date: "2023-01-01"}
+          - {order_id: 201, customer_id: 2, order_amount: 200.00, order_date: "2023-03-01"}
+    expect:
+      rows:
+        - {customer_id: 1, first_name: "John", last_name: "Doe", email: "john.doe@example.com", total_orders: 1, total_spent: 100.00, last_order_date: "2023-01-01"}
+        - {customer_id: 2, first_name: "Jane", last_name: "Smith", email: "jane.smith@example.com", total_orders: 1, total_spent: 200.00, last_order_date: "2023-03-01"}
+
+  - name: customer_order_summary_edge_case_no_customers
+    model: customer_order_summary
+    given:
+      - input: source('crm', 'customers')
+        rows: []
+      - input: source('sales', 'orders')
+        rows:
+          - {order_id: 101, customer_id: 1, order_amount: 100.00, order_date: "2023-01-01"}
+    expect:
+      rows: []
