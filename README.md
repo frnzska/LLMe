@@ -1,6 +1,6 @@
 # LLM Playground
 
-A collection of projects exploring Large Language Models and their applications. This repository serves as a playground for experimenting with different LLM related libraries, APIs, and use cases.
+A collection of projects exploring Large Language Models and their applications. Playground for experimenting with different LLM related libraries, APIs, and use cases.
 
 ## Projects
 
